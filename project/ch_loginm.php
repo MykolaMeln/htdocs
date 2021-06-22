@@ -31,14 +31,14 @@ $pdo = pdo_connect_mysql();
 				session_start();
 				$_SESSION['session_id'] = $id;
 				$_SESSION['session_name'] = $login2;
-        header('location:homead.php');
+        header('location:homem.php');
       }
       else {
         {
           ?>
           <script>
           alert("Login already exists!")
-          window.location="change_dataad.php";
+          window.location="change_datam.php";
         </script>
         <?php
         }
@@ -49,7 +49,7 @@ $pdo = pdo_connect_mysql();
   				?>
   				<script>
   				alert("Logins do not match!")
-  				window.location="change_dataad.php";
+  				window.location="change_datam.php";
   			</script>
   			<?php
   		 }

@@ -27,7 +27,7 @@ $pdo = pdo_connect_mysql();
 
         $msg = 'Updated Successfully!';
 				session_start();
-        header('location:homed.php');
+        header('location:homem.php');
 
 				}
         else
@@ -35,7 +35,7 @@ $pdo = pdo_connect_mysql();
   				?>
   				<script>
   				alert("Passwords do not match!")
-  				window.location="change_data.php";
+  				window.location="change_datam.php";
   			</script>
   			<?php
   		 }

@@ -14,6 +14,8 @@ $stmt->execute();
 
 $employee = $stmt->fetch();
 
+if($employee > 0)
+{
 if($employee['ID_Work'] != null)
 {
     $stmt = $pdo->prepare('SELECT * FROM employees WHERE ID_User = :id');
@@ -47,6 +49,15 @@ else {
   window.location="add_resume.php";
 </script>
 <?php
+}
+}
+else {
+  ?>
+  <script>
+  alert("You don`t data, Please Add Your Data!")
+  window.location="add_datae.php";
+ </script>
+ <?php
 }
 ?>
 

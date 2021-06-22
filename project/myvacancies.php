@@ -12,6 +12,8 @@ $stmt->execute();
 
 $user = $stmt->fetch();
 
+if($user > 0 )
+{
 $id = $user['ID_Employer'];
 
 $stmt2 = $pdo->prepare('SELECT * FROM vacancies WHERE ID_Employer = :id ORDER BY ID_Vacancy');
@@ -19,7 +21,15 @@ $stmt2->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt2->execute();
 
 $vacancies = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-
+}
+	else {
+	  ?>
+	  <script>
+	  alert("You don`t data, Please Add Your Data!")
+	  window.location="add_datar.php";
+	 </script>
+	 <?php
+	}
 ?>
 <?=template_headerr('Vacancies', $_SESSION['session_name'])?>
 

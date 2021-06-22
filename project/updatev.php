@@ -43,13 +43,13 @@ if (isset($_GET['id'])) {
         <label for="dateofp">Data_of_placing</label>
         <input type="text" name="dateofp" value="<?=$vacancy['Date_of_placing']?>" id="date" readonly>
         <label for="work">ID_Work</label>
-        <input type="text" name="idw" value="<?=$vacancy['ID_Work']?>" id="idw">
+        <input type="text" name="idw" value="<?=$vacancy['ID_Work']?>" id="idw" readonly>
         <label for="sallary">Salary</label>
         <input type="text" name="salary" value="<?=$vacancy['Salary']?>" id="salary">
         <label for="worksh">Work schedule</label>
         <input type="text" name="worksh" value="<?=$vacancy['Work_schedule']?>" id="worksh">
         <label for="state">State of Vacancy</label>
-        <input type="text" name="state" value="<?=$vacancy['StateOfVacancy']?>" id="state">
+        <input type="text" name="state" value="<?=$vacancy['StateOfVacancy']?>" id="state" readonly>
         <input type="submit" value="Update">
     </form>
 </div>

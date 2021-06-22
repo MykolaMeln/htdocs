@@ -50,7 +50,7 @@ if($employee['ID_User'] != null)
     $employeed = $stmt2->fetch();
 
     $stmt3 = $pdo->prepare('SELECT * FROM education WHERE ID_Education = :id');
-    $stmt3->bindParam(':id', $employed['ID_Education'], PDO::PARAM_INT);
+    $stmt3->bindParam(':id', $employeed['ID_Education'], PDO::PARAM_INT);
     $stmt3->execute();
 
     $education = $stmt3->fetch();

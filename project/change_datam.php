@@ -7,7 +7,7 @@ session_start();
 <body>
    <div class="content" style="width:500px; height:400px;">
 	 <h3 align="center">Change Login</h3>
-	 <form method="post" action="ch_login.php">
+	 <form method="post" action="ch_loginm.php">
 					 <label>Old Login</label>
 					 <input type="text" name="login" class="form-control" autofocus="autofocus" required>
 					 <br />
@@ -20,7 +20,7 @@ session_start();
     <br />
     <br />
      <h3 align="center">Change Password</h3>
-    <form method="post" action="ch_pass.php">
+    <form method="post" action="ch_passm.php">
 					 <br />
            <label>Old Password</label>
 					 <input type="password" name="password" class="form-control" required>

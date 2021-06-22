@@ -61,10 +61,10 @@ if(isset($_POST['adddata'])){
       <input type="text" name="registr" class="form-control"required>
       <br />
       <label>Phone Number</label>
-      <input type="text" name="phone" class="form-control" required>
+      <input type="text" name="phone" class="form-control" placeholder="+380678597465" required>
       <br />
       <label>Email</label>
-      <input type="text" name="email" class="form-control" required>
+      <input type="text" name="email" class="form-control" placeholder="mymail@mail.com" required>
       <br />
       <label>Education</label>
       <select name="education" align=center class="form-control" style="width:401px;">

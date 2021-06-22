@@ -40,10 +40,10 @@ if(isset($_POST['adddata'])){
       <input type="text" name="address" class="form-control" required>
       <br />
       <label>Phone Number</label>
-      <input type="text" name="phone" class="form-control" required>
+      <input type="text" name="phone" class="form-control"  placeholder="+380678597465" required>
       <br />
       <label>Email</label>
-      <input type="text" name="email" class="form-control" required>
+      <input type="text" name="email" class="form-control" placeholder="mymail@mail.com" required>
       <br />
       <input type="submit" name="adddata" value="Add" align=center class="btn btn-info" />
       <br />

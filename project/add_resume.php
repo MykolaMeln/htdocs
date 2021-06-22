@@ -17,10 +17,20 @@ if(isset($_POST['adddata'])){
   if($work > 0)
   {
      $idw = $work['ID_Work'];
+     $date = date_create()->format('Y-m-d');
+
+     $stmt = $pdo->prepare('UPDATE employees SET Date_of_appeal = :dateof, ID_Work = :idw, Result = :result WHERE ID_User = :id');
+     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+     $stmt->bindValue(':dateof', $date, PDO::PARAM_STR);
+     $stmt->bindValue(':idw', $idw, PDO::PARAM_INT);
+     $stmt->bindValue(':result', 'In process', PDO::PARAM_STR);
+     $stmt->execute();
+
+     header('Location: resume.php');
   }
   else {
 
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  /*  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $insert_query = "INSERT INTO works (ID_Work, NameWork) VALUES (?, ?)";
 
     $insert = $pdo->prepare($insert_query);
@@ -31,18 +41,14 @@ if(isset($_POST['adddata'])){
     $stmt2->execute();
 
     $work2 = $stmt2->fetch();
-    $idw = $work2['ID_Work'];
+    $idw = $work2['ID_Work'];*/
+    ?>
+    <script>
+    alert("No vacancy!")
+    window.location="add_resume.php";
+   </script>
+   <?php
   }
-  $date = date_create()->format('Y-m-d');
-
-  $stmt = $pdo->prepare('UPDATE employees SET Date_of_appeal = :dateof, ID_Work = :idw, Result = :result WHERE ID_User = :id');
-  $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-  $stmt->bindValue(':dateof', $date, PDO::PARAM_STR);
-  $stmt->bindValue(':idw', $idw, PDO::PARAM_INT);
-  $stmt->bindValue(':result', 'In process', PDO::PARAM_STR);
-  $stmt->execute();
-
-    header('Location: resume.php');
 }
 ?>
 
@@ -53,7 +59,7 @@ if(isset($_POST['adddata'])){
     <h2>Your Resume</h2>
     <form method="post" style="width:850px; height:100px;">
       <label>Name Work</label>
-      <input type="text" name="namework" class="form-control" required>
+      <input type="text" name="namework" class="form-control" placeholder="Builder" required>
       <br />
       <input type="submit" name="adddata" value="Create" class="btn btn-info" />
       <br />
